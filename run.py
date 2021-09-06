@@ -5,20 +5,23 @@ E-mail  : daffagifariakmal@gmail.com
 Date    : 31-August-2021
 Version : 1.0
 """
-
+import blogger
 import os
-from core.simple_image_download import simple_image_download as simp
+from simple_image_download import simple_image_download as simp
 
 response = simp.simple_image_download
 
-def banner(): #Function
-	print(
+#def banner(): #Function
+print(
 """
-  _____ _____ _____ _____ 
- |   __|     |   __|     |
- |   __|-   -|__   |   --|
- |__|  |_____|_____|_____|
- Fast Image Scraper v1.0
+ __________________
+ ___  __/__(_)__  /_
+ __  /_ __  /__  __ \\
+ _  __/ _  / _  /_/ /
+ /_/    /_/  /_.___/
+  Fast Image Blog v1.0
+   >>> Scraper & AGC Blogspot
+  Created By Dagimal
  ------------------------
 """
 )
@@ -33,11 +36,11 @@ def secondMenu():
 def googleHotlink(fileName):
 	f = open('output/hotlink/'+fileName)
 
-def blogger_upload():
+#def blogger_upload():
 	
 
 #Call Banner
-banner()
+#banner()
 mainMenu()
 
 #Input1
