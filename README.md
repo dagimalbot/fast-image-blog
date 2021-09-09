@@ -5,3 +5,6 @@
 - Posting ke blogger otomatis
 - Auto change blogger account (gmail)
 - Generate sentence from keyword
+
+## CARA PAKAI
+- 
