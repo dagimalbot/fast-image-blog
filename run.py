@@ -5,7 +5,7 @@ E-mail  : daffagifariakmal@gmail.com
 Date    : 31-August-2021
 Version : 1.0
 """
-import blogger
+#import blogger
 import os
 from simple_image_download import simple_image_download as simp
 from subprocess import call
@@ -31,9 +31,12 @@ def banner(): #Function
 def main():
 	menu()
 
-def clear(): # Clear Screen Function
-	# Check and make call for specific operating system
-	_ = call('clear' if os.name == 'posix' else 'cls')
+##def clear(): # Clear Screen Function
+##	# Check and make call for specific operating system
+##	_ = call('clear' if os.name == 'posix' else 'cls')
+
+def clear():
+        os.system('cls')
 
 def menu():
 	banner()
@@ -41,19 +44,43 @@ def menu():
 	choice = input('''
 		[1] Scrape Image
 		[2] Build Article
+		[0] Exit
 
 		Please enter your choice : ''')
 	if choice == '1':
 		scrapeImage()
 	elif choice == '2':
 		buildArticle()
+	elif choice == '0':
+		exit()
 	else:
 		clear()
-		banner()
 		menu()
 
-#def buildArticle():
+def buildArticle():
+	clear()
+	banner()
+	print('		@@@@@@@@@@@@ BUILD ARTICLE @@@@@@@@@@@@')
+	buildOpt = input('''
+		[1] Google <output/google>
+		[2] Bing <output/bing>
+		[3] Custom <output/custom>
 
+		Please enter your choice : ''')
+
+	# build function
+	def googleBuild():
+		
+
+	if buildOpt == '1':
+		googleBuild()
+	elif buildOpt == '2':
+		bingBuild()
+	elif buildOpt == '3':
+		buildCustom()
+	else:
+		clear()
+		buildArticle()
 
 def scrapeImage():
 	clear()
@@ -74,6 +101,9 @@ def scrapeImage():
 		for i in tqdm(file):
 			saveFile = open('output/google/'+i.replace('\n','')+'.txt','w')
 			print('\n'.join(response().urls(i, 5000)), file=saveFile)
+		print('Done ... Saved to output/google')
+		menu()
+            
 
 	def bingSearch():
 		clear()
